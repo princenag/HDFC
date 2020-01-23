@@ -1,0 +1,38 @@
+package Login1;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class twentytwo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.gecko.driver", "./softwares/geckodriver.exe"); 
+		 WebDriver driver= new FirefoxDriver();
+		 driver.get("file:///C:/Users/Rajendra%20Raaj/Desktop/drp.html");
+		 WebElement ele = driver.findElement(By.id("mtr"));
+		 Select s=new Select(ele);
+		 s.selectByIndex(2);
+		 s.selectByValue("po");
+ List<WebElement>options=s.getAllSelectedOptions();
+		 
+		 int count=options.size();
+		 System.out.println(count);
+		 
+		 s.selectByIndex(2);
+		 s.selectByValue("po");
+ List<WebElement>options1=s.getOptions();
+		 
+		 int count1=options1.size();
+		 System.out.println(count1);
+		 
+		 int c1=count1-count;
+		 System.out.println(c1);
+	}
+
+}
